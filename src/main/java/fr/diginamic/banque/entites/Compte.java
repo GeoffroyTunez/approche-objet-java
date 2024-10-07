@@ -8,4 +8,25 @@ public class Compte {
         this.nbCompte = nbCompte;
         this.soldeCompte = soldeCompte;
     }
+
+    public int getNbCompte() {
+        return nbCompte;
+    }
+
+    public void setNbCompte(int nbCompte) {
+        this.nbCompte = nbCompte;
+    }
+
+    public int getSoldeCompte() {
+        return soldeCompte;
+    }
+
+    public void setSoldeCompte(int soldeCompte) {
+        this.soldeCompte = soldeCompte;
+    }
+
+    @Override
+    public String toString() {
+        return "Compte{" + "nbCompte=" + nbCompte + ", soldeCompte=" + soldeCompte + '}';
+    }
 }
