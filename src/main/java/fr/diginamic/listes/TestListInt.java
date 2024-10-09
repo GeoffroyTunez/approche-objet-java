@@ -43,6 +43,7 @@ public class TestListInt {
                 list.set(i, element * -1);
             }
         }
+
         System.out.println("\nDans list final : ");
         for (int element : list) {
             System.out.println(element);

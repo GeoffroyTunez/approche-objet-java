@@ -1,6 +1,9 @@
-package fr.diginamic.listes;
+package fr.diginamic.tri;
+
+import fr.diginamic.tri.Ville;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TestVilles {
     public static void main(String[] args) {
@@ -16,10 +19,22 @@ public class TestVilles {
         listVille.add(new Ville("Marseille", 850700));
         listVille.add(new Ville("Tarbes", 40600));
 
+        System.out.println("compare to : \n");
+
+
+        Collections.sort(listVille);
+        for (Ville ville : listVille) {
+            System.out.println(ville.toString());
+        }
+
+
+        System.out.println("reste du code \n\n");
+
+
         String villePlusGrandePopulationNom = "";
         int villePlusGrandePopulationNb = 0;
         for (Ville ville : listVille) {
-            if(ville.getNbHabitants()>villePlusGrandePopulationNb){
+            if (ville.getNbHabitants() > villePlusGrandePopulationNb) {
                 villePlusGrandePopulationNom = ville.getNom();
                 villePlusGrandePopulationNb = ville.getNbHabitants();
             }
@@ -39,9 +54,9 @@ public class TestVilles {
         // Supprimer la ville avec le moins d'habitants
         listVille.remove(villeMoinsHabitants);
 
-        for(int i = 0;i< listVille.size();i++){
+        for (int i = 0; i < listVille.size(); i++) {
             int nbHabitant = listVille.get(i).getNbHabitants();
-            if(nbHabitant > 100000){
+            if (nbHabitant > 100000) {
 
                 String nomEnMajuscules = listVille.get(i).getNom().toUpperCase();
                 listVille.set(i, new Ville(nomEnMajuscules, nbHabitant));
