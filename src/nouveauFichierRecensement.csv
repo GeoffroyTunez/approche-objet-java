@@ -1,0 +1,361 @@
+Nom;Code de département;Nom de région;Population total
+Bourg-en-Bresse;01;Auvergne-Rhône-Alpes;41365.0
+Laon;02;Hauts-de-France;25193.0
+Saint-Quentin;02;Hauts-de-France;54443.0
+Soissons;02;Hauts-de-France;28466.0
+Montluçon;03;Auvergne-Rhône-Alpes;36147.0
+Gap;05;Provence-Alpes-Côte d'Azur;40805.0
+Antibes;06;Provence-Alpes-Côte d'Azur;73798.0
+Cagnes-sur-Mer;06;Provence-Alpes-Côte d'Azur;49902.0
+Cannes;06;Provence-Alpes-Côte d'Azur;74152.0
+Le Cannet;06;Provence-Alpes-Côte d'Azur;41612.0
+Grasse;06;Provence-Alpes-Côte d'Azur;50677.0
+Menton;06;Provence-Alpes-Côte d'Azur;28486.0
+Nice;06;Provence-Alpes-Côte d'Azur;342637.0
+Saint-Laurent-du-Var;06;Provence-Alpes-Côte d'Azur;28645.0
+Vallauris;06;Provence-Alpes-Côte d'Azur;26618.0
+Charleville-Mézières;08;Grand Est;46682.0
+Troyes;10;Grand Est;60640.0
+Carcassonne;11;Occitanie;45895.0
+Narbonne;11;Occitanie;53594.0
+Aix-en-Provence;13;Provence-Alpes-Côte d'Azur;143006.0
+Arles;13;Provence-Alpes-Côte d'Azur;52857.0
+Aubagne;13;Provence-Alpes-Côte d'Azur;45290.0
+La Ciotat;13;Provence-Alpes-Côte d'Azur;35366.0
+Istres;13;Provence-Alpes-Côte d'Azur;42925.0
+Marignane;13;Provence-Alpes-Côte d'Azur;33658.0
+Marseille;13;Provence-Alpes-Côte d'Azur;862211.0
+Martigues;13;Provence-Alpes-Côte d'Azur;48783.0
+Miramas;13;Provence-Alpes-Côte d'Azur;25756.0
+Salon-de-Provence;13;Provence-Alpes-Côte d'Azur;45574.0
+Vitrolles;13;Provence-Alpes-Côte d'Azur;33880.0
+Caen;14;Normandie;105403.0
+Aurillac;15;Auvergne-Rhône-Alpes;25954.0
+Angoulême;16;Nouvelle-Aquitaine;41935.0
+La Rochelle;17;Nouvelle-Aquitaine;75736.0
+Saintes;17;Nouvelle-Aquitaine;25355.0
+Bourges;18;Centre-Val de Loire;65555.0
+Vierzon;18;Centre-Val de Loire;26365.0
+Brive-la-Gaillarde;19;Nouvelle-Aquitaine;47004.0
+Ajaccio;2A;Corse;69075.0
+Bastia;2B;Corse;44829.0
+Dijon;21;Bourgogne-Franche-Comté;155090.0
+Saint-Brieuc;22;Bretagne;44999.0
+Bergerac;24;Nouvelle-Aquitaine;27269.0
+Périgueux;24;Nouvelle-Aquitaine;29912.0
+Besançon;25;Bourgogne-Franche-Comté;116466.0
+Montbéliard;25;Bourgogne-Franche-Comté;25304.0
+Montélimar;26;Auvergne-Rhône-Alpes;38692.0
+Romans-sur-Isère;26;Auvergne-Rhône-Alpes;33310.0
+Valence;26;Auvergne-Rhône-Alpes;62477.0
+Évreux;27;Normandie;48899.0
+Chartres;28;Centre-Val de Loire;38752.0
+Dreux;28;Centre-Val de Loire;30977.0
+Brest;29;Bretagne;139342.0
+Quimper;29;Bretagne;63405.0
+Alès;30;Occitanie;39970.0
+Nîmes;30;Occitanie;151001.0
+Colomiers;31;Occitanie;38716.0
+Muret;31;Occitanie;25207.0
+Toulouse;31;Occitanie;475438.0
+Tournefeuille;31;Occitanie;26436.0
+Bègles;33;Nouvelle-Aquitaine;27713.0
+Bordeaux;33;Nouvelle-Aquitaine;252040.0
+Gradignan;33;Nouvelle-Aquitaine;25563.0
+Mérignac;33;Nouvelle-Aquitaine;70317.0
+Pessac;33;Nouvelle-Aquitaine;61859.0
+Saint-Médard-en-Jalles;33;Nouvelle-Aquitaine;30956.0
+Talence;33;Nouvelle-Aquitaine;42712.0
+La Teste-de-Buch;33;Nouvelle-Aquitaine;26168.0
+Villenave-d'Ornon;33;Nouvelle-Aquitaine;32750.0
+Agde;34;Occitanie;27681.0
+Béziers;34;Occitanie;76493.0
+Lunel;34;Occitanie;26002.0
+Montpellier;34;Occitanie;281613.0
+Sète;34;Occitanie;43609.0
+Rennes;35;Bretagne;216268.0
+Saint-Malo;35;Bretagne;46005.0
+Châteauroux;36;Centre-Val de Loire;44088.0
+Joué-lès-Tours;37;Centre-Val de Loire;37505.0
+Tours;37;Centre-Val de Loire;136565.0
+Bourgoin-Jallieu;38;Auvergne-Rhône-Alpes;27651.0
+Échirolles;38;Auvergne-Rhône-Alpes;35855.0
+Grenoble;38;Auvergne-Rhône-Alpes;158180.0
+Saint-Martin-d'Hères;38;Auvergne-Rhône-Alpes;38634.0
+Vienne;38;Auvergne-Rhône-Alpes;29454.0
+Mont-de-Marsan;40;Nouvelle-Aquitaine;29885.0
+Blois;41;Centre-Val de Loire;45687.0
+Roanne;42;Auvergne-Rhône-Alpes;34685.0
+Saint-Chamond;42;Auvergne-Rhône-Alpes;35339.0
+Saint-Étienne;42;Auvergne-Rhône-Alpes;171924.0
+Nantes;44;Pays de la Loire;306694.0
+Orvault;44;Pays de la Loire;25931.0
+Rezé;44;Pays de la Loire;40368.0
+Saint-Herblain;44;Pays de la Loire;46603.0
+Saint-Nazaire;44;Pays de la Loire;69719.0
+Saint-Sébastien-sur-Loire;44;Pays de la Loire;26872.0
+Orléans;45;Centre-Val de Loire;114782.0
+Agen;47;Nouvelle-Aquitaine;33569.0
+Angers;49;Pays de la Loire;151229.0
+Cholet;49;Pays de la Loire;53718.0
+Saumur;49;Pays de la Loire;27125.0
+Sèvremoine;49;Pays de la Loire;25681.0
+Cherbourg-en-Cotentin;50;Normandie;80076.0
+Châlons-en-Champagne;51;Grand Est;44980.0
+Reims;51;Grand Est;183113.0
+Laval;53;Pays de la Loire;49492.0
+Nancy;54;Grand Est;104592.0
+Vandœuvre-lès-Nancy;54;Grand Est;30182.0
+Lorient;56;Bretagne;57274.0
+Vannes;56;Bretagne;53218.0
+Metz;57;Grand Est;117890.0
+Thionville;57;Grand Est;40586.0
+Nevers;58;Bourgogne-Franche-Comté;33235.0
+Armentières;59;Hauts-de-France;25015.0
+Cambrai;59;Hauts-de-France;32668.0
+Douai;59;Hauts-de-France;39657.0
+Dunkerque;59;Hauts-de-France;88108.0
+Lambersart;59;Hauts-de-France;27618.0
+Lille;59;Hauts-de-France;232440.0
+Marcq-en-Barœul;59;Hauts-de-France;38805.0
+Maubeuge;59;Hauts-de-France;29679.0
+Roubaix;59;Hauts-de-France;96412.0
+Tourcoing;59;Hauts-de-France;97476.0
+Valenciennes;59;Hauts-de-France;43680.0
+Villeneuve-d'Ascq;59;Hauts-de-France;62358.0
+Wattrelos;59;Hauts-de-France;41341.0
+Beauvais;60;Hauts-de-France;56020.0
+Compiègne;60;Hauts-de-France;40258.0
+Creil;60;Hauts-de-France;35747.0
+Alençon;61;Normandie;26129.0
+Arras;62;Hauts-de-France;40883.0
+Béthune;62;Hauts-de-France;25186.0
+Boulogne-sur-Mer;62;Hauts-de-France;41669.0
+Calais;62;Hauts-de-France;74978.0
+Hénin-Beaumont;62;Hauts-de-France;25901.0
+Lens;62;Hauts-de-France;30689.0
+Liévin;62;Hauts-de-France;30936.0
+Clermont-Ferrand;63;Auvergne-Rhône-Alpes;142686.0
+Anglet;64;Nouvelle-Aquitaine;38663.0
+Bayonne;64;Nouvelle-Aquitaine;50589.0
+Pau;64;Nouvelle-Aquitaine;77251.0
+Tarbes;65;Occitanie;40318.0
+Perpignan;66;Occitanie;121875.0
+Haguenau;67;Grand Est;34460.0
+Illkirch-Graffenstaden;67;Grand Est;26837.0
+Schiltigheim;67;Grand Est;31811.0
+Strasbourg;67;Grand Est;279284.0
+Colmar;68;Grand Est;69899.0
+Mulhouse;68;Grand Est;108999.0
+Bron;69;Auvergne-Rhône-Alpes;41060.0
+Caluire-et-Cuire;69;Auvergne-Rhône-Alpes;42915.0
+Décines-Charpieu;69;Auvergne-Rhône-Alpes;27851.0
+Lyon 1er Arrondissement;69;Auvergne-Rhône-Alpes;29575.0
+Lyon 2e Arrondissement;69;Auvergne-Rhône-Alpes;30435.0
+Lyon 3e Arrondissement;69;Auvergne-Rhône-Alpes;101992.0
+Lyon 4e Arrondissement;69;Auvergne-Rhône-Alpes;36080.0
+Lyon 5e Arrondissement;69;Auvergne-Rhône-Alpes;48929.0
+Lyon 6e Arrondissement;69;Auvergne-Rhône-Alpes;51416.0
+Lyon 7e Arrondissement;69;Auvergne-Rhône-Alpes;82045.0
+Lyon 8e Arrondissement;69;Auvergne-Rhône-Alpes;84517.0
+Lyon 9e Arrondissement;69;Auvergne-Rhône-Alpes;50706.0
+Meyzieu;69;Auvergne-Rhône-Alpes;32996.0
+Oullins;69;Auvergne-Rhône-Alpes;26512.0
+Rillieux-la-Pape;69;Auvergne-Rhône-Alpes;29885.0
+Saint-Priest;69;Auvergne-Rhône-Alpes;45844.0
+Vaulx-en-Velin;69;Auvergne-Rhône-Alpes;48497.0
+Vénissieux;69;Auvergne-Rhône-Alpes;65405.0
+Villefranche-sur-Saône;69;Auvergne-Rhône-Alpes;37266.0
+Villeurbanne;69;Auvergne-Rhône-Alpes;149019.0
+Chalon-sur-Saône;71;Bourgogne-Franche-Comté;45446.0
+Mâcon;71;Bourgogne-Franche-Comté;33427.0
+Le Mans;72;Pays de la Loire;142991.0
+Aix-les-Bains;73;Auvergne-Rhône-Alpes;29799.0
+Chambéry;73;Auvergne-Rhône-Alpes;59183.0
+Annecy;74;Auvergne-Rhône-Alpes;126419.0
+Annemasse;74;Auvergne-Rhône-Alpes;35041.0
+Thonon-les-Bains;74;Auvergne-Rhône-Alpes;35132.0
+Paris;75;Île-de-France;2190327.0
+Dieppe;76;Normandie;29606.0
+Le Grand-Quevilly;76;Normandie;25897.0
+Le Havre;76;Normandie;170352.0
+Rouen;76;Normandie;110117.0
+Saint-Étienne-du-Rouvray;76;Normandie;28696.0
+Sotteville-lès-Rouen;76;Normandie;28991.0
+Bussy-Saint-Georges;77;Île-de-France;26971.0
+Chelles;77;Île-de-France;54196.0
+Meaux;77;Île-de-France;54331.0
+Melun;77;Île-de-France;40228.0
+Pontault-Combault;77;Île-de-France;38326.0
+Savigny-le-Temple;77;Île-de-France;30097.0
+Villeparisis;77;Île-de-France;26327.0
+Chatou;78;Île-de-France;31134.0
+Le Chesnay;78;Île-de-France;28001.0
+Conflans-Sainte-Honorine;78;Île-de-France;35404.0
+Élancourt;78;Île-de-France;25529.0
+Guyancourt;78;Île-de-France;28385.0
+Houilles;78;Île-de-France;31689.0
+Mantes-la-Jolie;78;Île-de-France;43969.0
+Montigny-le-Bretonneux;78;Île-de-France;32986.0
+Les Mureaux;78;Île-de-France;32575.0
+Plaisir;78;Île-de-France;31680.0
+Poissy;78;Île-de-France;37146.0
+Rambouillet;78;Île-de-France;26202.0
+Saint-Germain-en-Laye;78;Île-de-France;39982.0
+Sartrouville;78;Île-de-France;52648.0
+Trappes;78;Île-de-France;32679.0
+Versailles;78;Île-de-France;85346.0
+Niort;79;Nouvelle-Aquitaine;59005.0
+Amiens;80;Hauts-de-France;133755.0
+Albi;81;Occitanie;49024.0
+Castres;81;Occitanie;41338.0
+Montauban;82;Occitanie;60444.0
+Draguignan;83;Provence-Alpes-Côte d'Azur;40053.0
+Fréjus;83;Provence-Alpes-Côte d'Azur;53168.0
+La Garde;83;Provence-Alpes-Côte d'Azur;25236.0
+Hyères;83;Provence-Alpes-Côte d'Azur;55772.0
+Saint-Raphaël;83;Provence-Alpes-Côte d'Azur;35222.0
+La Seyne-sur-Mer;83;Provence-Alpes-Côte d'Azur;64620.0
+Six-Fours-les-Plages;83;Provence-Alpes-Côte d'Azur;33250.0
+Toulon;83;Provence-Alpes-Côte d'Azur;169634.0
+Avignon;84;Provence-Alpes-Côte d'Azur;92378.0
+Carpentras;84;Provence-Alpes-Côte d'Azur;28554.0
+Cavaillon;84;Provence-Alpes-Côte d'Azur;26492.0
+Orange;84;Provence-Alpes-Côte d'Azur;29212.0
+La Roche-sur-Yon;85;Pays de la Loire;53741.0
+Châtellerault;86;Nouvelle-Aquitaine;32057.0
+Poitiers;86;Nouvelle-Aquitaine;87961.0
+Limoges;87;Nouvelle-Aquitaine;132660.0
+Épinal;88;Grand Est;31558.0
+Auxerre;89;Bourgogne-Franche-Comté;34846.0
+Sens;89;Bourgogne-Franche-Comté;25913.0
+Belfort;90;Bourgogne-Franche-Comté;48973.0
+Athis-Mons;91;Île-de-France;33691.0
+Brétigny-sur-Orge;91;Île-de-France;26275.0
+Brunoy;91;Île-de-France;26055.0
+Corbeil-Essonnes;91;Île-de-France;51049.0
+Draveil;91;Île-de-France;29279.0
+Évry;91;Île-de-France;54663.0
+Grigny;91;Île-de-France;28958.0
+Massy;91;Île-de-France;49924.0
+Palaiseau;91;Île-de-France;34120.0
+Ris-Orangis;91;Île-de-France;28796.0
+Sainte-Geneviève-des-Bois;91;Île-de-France;35859.0
+Savigny-sur-Orge;91;Île-de-France;36307.0
+Vigneux-sur-Seine;91;Île-de-France;31256.0
+Viry-Châtillon;91;Île-de-France;30575.0
+Yerres;91;Île-de-France;28820.0
+Antony;92;Île-de-France;62210.0
+Asnières-sur-Seine;92;Île-de-France;85973.0
+Bagneux;92;Île-de-France;39763.0
+Bois-Colombes;92;Île-de-France;28323.0
+Boulogne-Billancourt;92;Île-de-France;119645.0
+Châtenay-Malabry;92;Île-de-France;33016.0
+Châtillon;92;Île-de-France;36779.0
+Clamart;92;Île-de-France;52528.0
+Clichy;92;Île-de-France;60387.0
+Colombes;92;Île-de-France;85368.0
+Courbevoie;92;Île-de-France;81720.0
+La Garenne-Colombes;92;Île-de-France;29248.0
+Gennevilliers;92;Île-de-France;46653.0
+Issy-les-Moulineaux;92;Île-de-France;68395.0
+Levallois-Perret;92;Île-de-France;63462.0
+Malakoff;92;Île-de-France;29973.0
+Meudon;92;Île-de-France;45328.0
+Montrouge;92;Île-de-France;49128.0
+Nanterre;92;Île-de-France;94258.0
+Neuilly-sur-Seine;92;Île-de-France;60580.0
+Le Plessis-Robinson;92;Île-de-France;29028.0
+Puteaux;92;Île-de-France;44662.0
+Rueil-Malmaison;92;Île-de-France;78195.0
+Saint-Cloud;92;Île-de-France;30193.0
+Suresnes;92;Île-de-France;48620.0
+Vanves;92;Île-de-France;27846.0
+Aubervilliers;93;Île-de-France;86061.0
+Aulnay-sous-Bois;93;Île-de-France;84662.0
+Bagnolet;93;Île-de-France;35864.0
+Le Blanc-Mesnil;93;Île-de-France;55987.0
+Bobigny;93;Île-de-France;52337.0
+Bondy;93;Île-de-France;53193.0
+Clichy-sous-Bois;93;Île-de-France;29835.0
+La Courneuve;93;Île-de-France;42485.0
+Drancy;93;Île-de-France;70269.0
+Épinay-sur-Seine;93;Île-de-France;55593.0
+Gagny;93;Île-de-France;39148.0
+Livry-Gargan;93;Île-de-France;44466.0
+Montfermeil;93;Île-de-France;26085.0
+Montreuil;93;Île-de-France;108402.0
+Neuilly-sur-Marne;93;Île-de-France;34685.0
+Noisy-le-Grand;93;Île-de-France;66659.0
+Noisy-le-Sec;93;Île-de-France;43537.0
+Pantin;93;Île-de-France;55342.0
+Pierrefitte-sur-Seine;93;Île-de-France;29608.0
+Romainville;93;Île-de-France;26510.0
+Rosny-sous-Bois;93;Île-de-France;45411.0
+Saint-Denis;93;Île-de-France;111354.0
+Saint-Ouen;93;Île-de-France;49664.0
+Sevran;93;Île-de-France;50629.0
+Stains;93;Île-de-France;39618.0
+Tremblay-en-France;93;Île-de-France;35691.0
+Villemomble;93;Île-de-France;30051.0
+Villepinte;93;Île-de-France;36656.0
+Alfortville;94;Île-de-France;43886.0
+Cachan;94;Île-de-France;30208.0
+Champigny-sur-Marne;94;Île-de-France;77409.0
+Charenton-le-Pont;94;Île-de-France;30500.0
+Choisy-le-Roi;94;Île-de-France;44450.0
+Créteil;94;Île-de-France;89392.0
+Fontenay-sous-Bois;94;Île-de-France;53424.0
+Fresnes;94;Île-de-France;27416.0
+L' Haÿ-les-Roses;94;Île-de-France;31189.0
+Ivry-sur-Seine;94;Île-de-France;60771.0
+Le Kremlin-Bicêtre;94;Île-de-France;25292.0
+Limeil-Brévannes;94;Île-de-France;26703.0
+Maisons-Alfort;94;Île-de-France;55289.0
+Nogent-sur-Marne;94;Île-de-France;31947.0
+Le Perreux-sur-Marne;94;Île-de-France;33729.0
+Saint-Maur-des-Fossés;94;Île-de-France;74893.0
+Sucy-en-Brie;94;Île-de-France;26279.0
+Thiais;94;Île-de-France;29006.0
+Villejuif;94;Île-de-France;55478.0
+Villeneuve-Saint-Georges;94;Île-de-France;32966.0
+Villiers-sur-Marne;94;Île-de-France;29226.0
+Vincennes;94;Île-de-France;49853.0
+Vitry-sur-Seine;94;Île-de-France;92755.0
+Argenteuil;95;Île-de-France;110468.0
+Bezons;95;Île-de-France;28976.0
+Cergy;95;Île-de-France;63820.0
+Eaubonne;95;Île-de-France;25161.0
+Ermont;95;Île-de-France;29112.0
+Franconville;95;Île-de-France;36112.0
+Garges-lès-Gonesse;95;Île-de-France;42598.0
+Gonesse;95;Île-de-France;26336.0
+Goussainville;95;Île-de-France;30948.0
+Herblay;95;Île-de-France;29066.0
+Pontoise;95;Île-de-France;30690.0
+Sannois;95;Île-de-France;26537.0
+Sarcelles;95;Île-de-France;57781.0
+Taverny;95;Île-de-France;26296.0
+Villiers-le-Bel;95;Île-de-France;27247.0
+Les Abymes;971;Guadeloupe;54260.0
+Baie-Mahault;971;Guadeloupe;30868.0
+Le Gosier;971;Guadeloupe;26666.0
+Fort-de-France;972;Martinique;81017.0
+Le Lamentin;972;Martinique;40175.0
+Cayenne;973;Guyane;60580.0
+Kourou;973;Guyane;26522.0
+Matoury;973;Guyane;32440.0
+Remire-Montjoly;973;Guyane;25711.0
+Saint-Laurent-du-Maroni;973;Guyane;43799.0
+Le Port;974;La Réunion;34810.0
+La Possession;974;La Réunion;32973.0
+Saint-André;974;La Réunion;55628.0
+Saint-Benoît;974;La Réunion;38142.0
+Saint-Denis;974;La Réunion;147920.0
+Saint-Joseph;974;La Réunion;37629.0
+Saint-Leu;974;La Réunion;33697.0
+Saint-Louis;974;La Réunion;53220.0
+Saint-Paul;974;La Réunion;105482.0
+Saint-Pierre;974;La Réunion;84169.0
+Sainte-Marie;974;La Réunion;33160.0
+Le Tampon;974;La Réunion;77283.0
