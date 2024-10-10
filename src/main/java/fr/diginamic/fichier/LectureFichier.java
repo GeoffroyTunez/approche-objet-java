@@ -10,7 +10,7 @@ public class LectureFichier {
         String cheminNouveauFichier = "src/nouveauFichierRecensement.csv";
 
         try (BufferedReader reader = new BufferedReader(new FileReader(cheminFichier));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(cheminNouveauFichier))) {
+                 BufferedWriter writer = new BufferedWriter(new FileWriter(cheminNouveauFichier))) {
 
 
             reader.readLine();
@@ -31,14 +31,18 @@ public class LectureFichier {
                 }
             }
 
+            String line = String.format("Nom;Code de département;Nom de région;Population total");
+            writer.write(line);
+            writer.newLine();
 
             for (Ville ville : villelist) {
                 if (ville.getPopulationTotal() > 25000) {
-                    String line = String.format(ville.getNom()+";"+ ville.getCodeDepartement()+";"+ ville.getNomRegion()+";"+ ville.getPopulationTotal());
+                    line = String.format(ville.getNom()+";"+ ville.getCodeDepartement()+";"+ ville.getNomRegion()+";"+ ville.getPopulationTotal());
                     writer.write(line);
                     writer.newLine();
                 }
             }
+
         } catch (IOException e) {
             System.err.println("Erreur lors de la lecture ou de l'écriture du fichier : " + e.getMessage());
         }
