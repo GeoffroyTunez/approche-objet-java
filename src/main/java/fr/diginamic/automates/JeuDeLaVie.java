@@ -3,7 +3,7 @@ package fr.diginamic.automates;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
-public class test {
+public class JeuDeLaVie {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
