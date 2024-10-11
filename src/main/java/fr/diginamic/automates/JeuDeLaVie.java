@@ -1,8 +1,9 @@
 package fr.diginamic.automates;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
-public class JeuDeLaVie {
+public class test {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class JeuDeLaVie {
         tabDeJeu = generationTab(tabDeJeu);
         printTab(tabDeJeu);
 
-        System.out.println("tab.lenght"+tabDeJeu.length);
+        System.out.println("tab.lenght" + tabDeJeu.length);
         System.out.println("tab[0].lenght" + tabDeJeu[0].length);
 
         System.out.println("Positionnement des cellules vivantes : ");
@@ -23,71 +24,16 @@ public class JeuDeLaVie {
 
         System.out.println("La parti commence ! ");
 
-
-
-
-        System.out.println("calcul cellule proche :");
         for (int i = 0; i < tabDeJeu.length; i++) {
-            for (int j = 1; j < tabDeJeu[i].length; j+=2) {
-                if (i != 0 && i< (tabDeJeu.length-1)) {
-                    if (j != 0 && j< (tabDeJeu[0].length-1)) {
-                        int nbCellProcheVivante = findCellProcheVivante(i, j, tabDeJeu);
-                        if (tabDeJeu[i][j] == 'X' && (nbCellProcheVivante >= 4 || nbCellProcheVivante < 2)) {
-                            tabDeJeu[i][j] = ' ';
-                            System.out.println("mort de la cellule 1000 en : i="+i +"|j="+j);
-                            System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                        }
-                    } else {
-                        int nbCellProcheVivante = findCellProcheBorderVivant(i, j, tabDeJeu);
-                        if (tabDeJeu[i][j] == 'X' && (nbCellProcheVivante >= 4 || nbCellProcheVivante < 2)) {
-                            tabDeJeu[i][j] = ' ';
-                            System.out.println("mort de la cellule 1001 en : i="+i +"|j="+j);
-                            System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                        }
-                    }
-                }else {
-                    int nbCellProcheVivante = findCellProcheBorderVivant(i, j, tabDeJeu);
-                    if (tabDeJeu[i][j] == 'X' && (nbCellProcheVivante >= 4 || nbCellProcheVivante < 2)) {
-                        tabDeJeu[i][j] = ' ';
-                            System.out.println("mort de la cellule 1002 en : i="+i +"|j="+j);
-                        System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                    }
-                }
+            for (int j = 1; j < tabDeJeu[i].length; j += 2) {
 
-            }
-        } // regle de mort
-        System.out.println("fin de passage pour les vivant");
+                System.out.println("test de sur la case i=" + i + "| j=" + j);
 
-        for (int i = 0; i < tabDeJeu.length; i++) {   // regle de vie
-            for (int j = 1; j < tabDeJeu[i].length; j+=2) {
-                if (i != 0 && i< (tabDeJeu.length-1)) {
-                    if (j != 0 && j<(tabDeJeu[0].length-1)) {
-                        int nbCellProcheVivante = findCellProcheVivante(i, j, tabDeJeu);
-                        if (tabDeJeu[i][j] == ' ' && nbCellProcheVivante==3) {
-                            tabDeJeu[i][j] = 'X';
-                            System.out.println("naissance d'une cellule 2000 en : i="+i +"|j="+j );
-                            System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                        }
-                    } else {
-                        int nbCellProcheVivante = findCellProcheBorderVivant(i, j, tabDeJeu);
-                        if (tabDeJeu[i][j] == ' ' && nbCellProcheVivante==3) {
-                            tabDeJeu[i][j] = 'X';
-                            System.out.println("naissance d'une cellule 2001 en : i="+i +"|j="+j);
-                            System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                        }
-                    }
-                }
-                else {
-                    int nbCellProcheVivante = findCellProcheBorderVivant(i, j, tabDeJeu);
-                    if (tabDeJeu[i][j] == ' ' && nbCellProcheVivante==3) {
-                        tabDeJeu[i][j] = 'X';
-                        System.out.println("naissance d'une cellule 2002 en : i="+i +"|j="+j);
-                        System.out.println("nombre de cellule vivante : " + nbCellProcheVivante);
-                    }
-                }
+                checkCell(i, j, tabDeJeu);
+
             }
         }
-        System.out.println("print du tab avec un tour de mort et de vie ");
+
         printTab(tabDeJeu);
 
 
@@ -139,134 +85,306 @@ public class JeuDeLaVie {
         }
     }
 
-    private static int findCellProcheVivante(int i, int j, char[][] tabDeJeu) {
-        int nbCellProcheVivante = 0;
+    private static void checkCell(int i, int j, char[][] tabDeJeu) {
+        int nbCelleVivantProche = 0;
+//            System.out.println("presence de cellule vivante en i="+i+"| j="+j);
+        if (i == 0) {
+            if (j == 1) {                               // coin haut gauche
+                if (tabDeJeu[i][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + i + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i + 1][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i + 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + j);
+                }
+            } else if (j == (tabDeJeu[0].length - 2)) {          // coin haut droit
+                if (tabDeJeu[i][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i + 1][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i + 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
+                }
+            } else {                                  // haut border
+                if (tabDeJeu[i + 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
+                }
+                if (tabDeJeu[i + 1][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i + 1][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                }
+            }
+        }                            // en haut
+        else if (i == (tabDeJeu.length - 2)) {
+            if (j == 1) {                                   // coin bas gauche
+                if (tabDeJeu[i - 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                }
+                if (tabDeJeu[i - 1][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                }
+            } else if (j == (tabDeJeu[0].length - 2)) {         // coin bas droit
+                if (tabDeJeu[i][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i - 1][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i - 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                }
+            } else {                                      // base border
+                if (tabDeJeu[i][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i - 1][j - 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                }
+                if (tabDeJeu[i - 1][j] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                }
+                if (tabDeJeu[i - 1][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
+                }
+                if (tabDeJeu[i][j + 2] == 'X') {
+                    nbCelleVivantProche++;
+                } else {
+                    System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                }
+            }
 
-        if (tabDeJeu[i - 1][j - 1] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i][j - 1] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i + 1][j - 1] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i - 1][j] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i + 1][j] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i - 1][j + 1] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i][j + 1] == 'X') {
-            nbCellProcheVivante++;
-        }
-        if (tabDeJeu[i + 1][j + 1] == 'X') {
-            nbCellProcheVivante++;
+        }       // ou en bas
+        else {
+            if (j == 1) {
+                if (i == (tabDeJeu.length - 1)) {
+                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i][j + 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                    }
+                } else {
+                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i][j + 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i + 1][j + 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i + 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
+                    }
+                }
+
+            } else if (j == (tabDeJeu[0].length - 2)) {
+                if(i == (tabDeJeu.length -1)){
+                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                    }
+                }else{
+                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i + 1][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i + 1][j] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
+                    }
+                }
+            } else {
+                if (i == (tabDeJeu.length - 1)) {
+                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche haut
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i - 1][j] == 'X') { // check haut
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check haut droit
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i][j + 2] == 'X') { // check droit
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                    }
+                } else {
+
+                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche haut
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i - 1][j] == 'X') { // check haut
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check haut droit
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
+                    }
+                    if (tabDeJeu[i][j + 2] == 'X') { // check droit
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i + 1][j + 2] == 'X') { // check bas droit
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
+                    }
+                    if (tabDeJeu[i + 1][j] == 'X') { // check bas
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
+                    }
+                    if (tabDeJeu[i + 1][j - 2] == 'X') { // check bas gauche
+                        nbCelleVivantProche++;
+                    } else {
+                        System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
+                    }
+                }
+            }
+        }                                   // le reste
+
+        if (nbCelleVivantProche == 2 || nbCelleVivantProche == 3) {
+            tabDeJeu[i][j] = 'X';
+            System.out.println("ajout d'une cellule");
+            System.out.println("nombre de celle proche = " + nbCelleVivantProche);
+        } else if (nbCelleVivantProche >= 4 || nbCelleVivantProche < 2) {
+            tabDeJeu[i][j] = ' ';
+            System.out.println("mort d'une cellule");
+            System.out.println("nombre de celle proche = " + nbCelleVivantProche);
+        } else {
+            System.out.println("ERREUR 100");
         }
 
-        return nbCellProcheVivante;
     }
-
-    private static int findCellProcheBorderVivant(int initI, int initJ, char[][] tabDeJeu) {
-        int nbCellProcheVivante = 0;
-
-        if (initI == 0) {
-            if (initJ == 0) {                           // coins haut gauche
-                if (tabDeJeu[initI][initJ +1] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI + 1][initJ] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI + 1][initJ + 1] == 'X') {
-                    nbCellProcheVivante++;
-                }
-            }else if(initJ == (tabDeJeu[0].length-1)){         // coins haut droit
-                if(tabDeJeu[initI][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI+1][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI+1][initJ] == 'X'){
-                    nbCellProcheVivante++;
-                }
-            }else {                                      // bordure haute
-                if (tabDeJeu[initI][initJ + 1] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI + 1][initJ] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI + 1][initJ + 1] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI + 1][initJ - 1] == 'X') {
-                    nbCellProcheVivante++;
-                } else if (tabDeJeu[initI][initJ - 1] == 'X') {
-                    nbCellProcheVivante++;
-                }
-            }
-
-        }                       // calcul haut
-        else if(initI == (tabDeJeu.length-1)){
-            if(initJ == 0){                             // coins bas gauche
-                if(tabDeJeu[initI-1][initJ] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ+1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI][initJ+1] == 'X'){
-                    nbCellProcheVivante++;
-                }
-            }else if (initJ == (tabDeJeu[0].length-1)) {       // coins bas droite
-                if(tabDeJeu[initI][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ] == 'X'){
-                    nbCellProcheVivante++;
-                }
-            }else{                                      //bordure basse
-                if(tabDeJeu[initI][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ-1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI-1][initJ+1] == 'X'){
-                    nbCellProcheVivante++;
-                }else if(tabDeJeu[initI][initJ+1] == 'X'){
-                    nbCellProcheVivante++;
-                }
-            }
-        }   // calcul bas
-        else if(initJ == 0){
-
-            if(tabDeJeu[initI-1][initJ] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI-1][initJ+1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI][initJ+1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI+1][initJ+1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI+1][initJ] == 'X'){
-                nbCellProcheVivante++;
-            }
-}                    // calcul gauche
-        else if(initJ == (tabDeJeu.length-1)){
-            if(tabDeJeu[initI+1][initJ] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI+1][initJ-1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI][initJ-1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI-1][initJ-1] == 'X'){
-                nbCellProcheVivante++;
-            }else if(tabDeJeu[initI-1][initJ] == 'X'){
-                nbCellProcheVivante++;
-            }
-        }      // calcul droit
-
-
-        return nbCellProcheVivante;
-    }
-
-
 }
