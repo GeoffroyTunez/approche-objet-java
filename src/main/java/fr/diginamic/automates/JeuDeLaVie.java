@@ -6,11 +6,58 @@ import java.util.Scanner;
 public class JeuDeLaVie {
     static Scanner scanner = new Scanner(System.in);
 
+
+    static char[][] config1 = {
+            {'|',' ','|',' ','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|','■','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|','■','|','■','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|','■','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|','■','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|','■','|',' ','|',' ','|',' ','|',' ','|','■','|',' ','|'}
+    };
+
+
+
+
+    static char[][] config2 = {
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|','■','|','■','|','■','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'}
+    };
+
+
+
+    static char[][] config3 = {
+            {'|',' ','|',' ','|',' ','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|','■','|','■','|','■','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'},
+            {'|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|',' ','|'}
+    };
+
+
+    public static char[][] tabDeJeuNewGeneration = new char[5][21];
+
     public static void main(String[] args) {
         char[][] tabDeJeu = new char[5][21];
 
 
-        tabDeJeu = generationTab(tabDeJeu);
+        System.out.println("Choisiser entre les 3 configuration possible : (1,2,3)");
+        int choixUtil = scanner.nextInt();
+
+        if(choixUtil == 1){
+            tabDeJeu = config1;
+        }else if(choixUtil == 2){
+            tabDeJeu = config2;
+        }else if(choixUtil == 3){
+            tabDeJeu = config3;
+        }else{
+            System.out.println("ERREUR choix non valide ! ");
+            return ;
+        }
+
+//        tabDeJeu = generationTab(tabDeJeu);
         printTab(tabDeJeu);
 
         System.out.println("tab.lenght" + tabDeJeu.length);
@@ -18,7 +65,7 @@ public class JeuDeLaVie {
 
         System.out.println("Positionnement des cellules vivantes : ");
 
-        setTabCell(tabDeJeu);
+//        setTabCell(tabDeJeu);
 
         printTab(tabDeJeu);
 
@@ -34,25 +81,25 @@ public class JeuDeLaVie {
             }
         }
 
-        printTab(tabDeJeu);
+        printTab(tabDeJeuNewGeneration);
 
 
     }
 
 
-    private static char[][] generationTab(char[][] tabDeJeu) {
-        for (int i = 0; i < tabDeJeu.length; i++) {
-            for (int j = 0; j < tabDeJeu[i].length; j++) {
-                if (j % 2 == 0) {
-                    tabDeJeu[i][j] = '|';
-                } else {
-                    tabDeJeu[i][j] = ' ';
-                }
-            }
-
-        }
-        return tabDeJeu;
-    }
+//    private static char[][] generationTab(char[][] tabDeJeu) {
+//        for (int i = 0; i < tabDeJeu.length; i++) {
+//            for (int j = 0; j < tabDeJeu[i].length; j++) {
+//                if (j % 2 == 0) {
+//                    tabDeJeu[i][j] = '|';
+//                } else {
+//                    tabDeJeu[i][j] = ' ';
+//                }
+//            }
+//
+//        }
+//        return tabDeJeu;
+//    }
 
     private static void printTab(char[][] tabDeJeu) {
         System.out.println("Affichage du tableau de jeu : ");
@@ -73,7 +120,7 @@ public class JeuDeLaVie {
                     entreChoixUtil = entreChoixUtil.toUpperCase();
                     System.out.println("utilisateur input : " + entreChoixUtil.charAt(0));
                     char choixUtil = entreChoixUtil.charAt(0);
-                    if (choixUtil == ' ' || choixUtil == 'X') {
+                    if (choixUtil == ' ' || choixUtil == '■') {
                         tabDeJeu[i][j] = choixUtil;
                     } else {
                         tabDeJeu[i][j] = ' ';
@@ -90,59 +137,59 @@ public class JeuDeLaVie {
 //            System.out.println("presence de cellule vivante en i="+i+"| j="+j);
         if (i == 0) {
             if (j == 1) {                               // coin haut gauche
-                if (tabDeJeu[i][j + 2] == 'X') {
+                if (tabDeJeu[i][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + i + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i + 1][j + 2] == 'X') {
+                if (tabDeJeu[i + 1][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i + 1][j] == 'X') {
+                if (tabDeJeu[i + 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + j);
                 }
             } else if (j == (tabDeJeu[0].length - 2)) {          // coin haut droit
-                if (tabDeJeu[i][j - 2] == 'X') {
+                if (tabDeJeu[i][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i + 1][j - 2] == 'X') {
+                if (tabDeJeu[i + 1][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i + 1][j] == 'X') {
+                if (tabDeJeu[i + 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
                 }
             } else {                                  // haut border
-                if (tabDeJeu[i + 1][j] == 'X') {
+                if (tabDeJeu[i + 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
                 }
-                if (tabDeJeu[i + 1][j + 2] == 'X') {
+                if (tabDeJeu[i + 1][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i][j + 2] == 'X') {
+                if (tabDeJeu[i][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i + 1][j - 2] == 'X') {
+                if (tabDeJeu[i + 1][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i][j - 2] == 'X') {
+                if (tabDeJeu[i][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
@@ -151,59 +198,59 @@ public class JeuDeLaVie {
         }                            // en haut
         else if (i == (tabDeJeu.length - 2)) {
             if (j == 1) {                                   // coin bas gauche
-                if (tabDeJeu[i - 1][j] == 'X') {
+                if (tabDeJeu[i - 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                 }
-                if (tabDeJeu[i - 1][j + 2] == 'X') {
+                if (tabDeJeu[i - 1][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i][j + 2] == 'X') {
+                if (tabDeJeu[i][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                 }
             } else if (j == (tabDeJeu[0].length - 2)) {         // coin bas droit
-                if (tabDeJeu[i][j - 2] == 'X') {
+                if (tabDeJeu[i][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i - 1][j - 2] == 'X') {
+                if (tabDeJeu[i - 1][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i - 1][j] == 'X') {
+                if (tabDeJeu[i - 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                 }
             } else {                                      // base border
-                if (tabDeJeu[i][j - 2] == 'X') {
+                if (tabDeJeu[i][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i - 1][j - 2] == 'X') {
+                if (tabDeJeu[i - 1][j - 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                 }
-                if (tabDeJeu[i - 1][j] == 'X') {
+                if (tabDeJeu[i - 1][j] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                 }
-                if (tabDeJeu[i - 1][j + 2] == 'X') {
+                if (tabDeJeu[i - 1][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
                 }
-                if (tabDeJeu[i][j + 2] == 'X') {
+                if (tabDeJeu[i][j + 2] == '■') {
                     nbCelleVivantProche++;
                 } else {
                     System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
@@ -214,43 +261,43 @@ public class JeuDeLaVie {
         else {
             if (j == 1) {
                 if (i == (tabDeJeu.length - 1)) {
-                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j + 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i][j + 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j + 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                     }
                 } else {
-                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j + 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i][j + 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j + 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i + 1][j + 2] == 'X') { // check gauche
+                    if (tabDeJeu[i + 1][j + 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i + 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i + 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
@@ -259,43 +306,43 @@ public class JeuDeLaVie {
 
             } else if (j == (tabDeJeu[0].length - 2)) {
                 if(i == (tabDeJeu.length -1)){
-                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                     }
                 }else{
-                    if (tabDeJeu[i - 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i - 1][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i + 1][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i + 1][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i + 1][j] == 'X') { // check gauche
+                    if (tabDeJeu[i + 1][j] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
@@ -303,69 +350,69 @@ public class JeuDeLaVie {
                 }
             } else {
                 if (i == (tabDeJeu.length - 1)) {
-                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche haut
+                    if (tabDeJeu[i - 1][j - 2] == '■') { // check gauche haut
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i - 1][j] == 'X') { // check haut
+                    if (tabDeJeu[i - 1][j] == '■') { // check haut
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check haut droit
+                    if (tabDeJeu[i - 1][j + 2] == '■') { // check haut droit
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i][j + 2] == 'X') { // check droit
+                    if (tabDeJeu[i][j + 2] == '■') { // check droit
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                     }
                 } else {
 
-                    if (tabDeJeu[i][j - 2] == 'X') { // check gauche
+                    if (tabDeJeu[i][j - 2] == '■') { // check gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i - 1][j - 2] == 'X') { // check gauche haut
+                    if (tabDeJeu[i - 1][j - 2] == '■') { // check gauche haut
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i - 1][j] == 'X') { // check haut
+                    if (tabDeJeu[i - 1][j] == '■') { // check haut
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i - 1][j + 2] == 'X') { // check haut droit
+                    if (tabDeJeu[i - 1][j + 2] == '■') { // check haut droit
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i - 1) + " | j=" + (j - 2));
                     }
-                    if (tabDeJeu[i][j + 2] == 'X') { // check droit
+                    if (tabDeJeu[i][j + 2] == '■') { // check droit
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i + 1][j + 2] == 'X') { // check bas droit
+                    if (tabDeJeu[i + 1][j + 2] == '■') { // check bas droit
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j + 2));
                     }
-                    if (tabDeJeu[i + 1][j] == 'X') { // check bas
+                    if (tabDeJeu[i + 1][j] == '■') { // check bas
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j));
                     }
-                    if (tabDeJeu[i + 1][j - 2] == 'X') { // check bas gauche
+                    if (tabDeJeu[i + 1][j - 2] == '■') { // check bas gauche
                         nbCelleVivantProche++;
                     } else {
                         System.out.println("rien en : i=" + (i + 1) + " | j=" + (j - 2));
@@ -375,11 +422,11 @@ public class JeuDeLaVie {
         }                                   // le reste
 
         if (nbCelleVivantProche == 2 || nbCelleVivantProche == 3) {
-            tabDeJeu[i][j] = 'X';
+            tabDeJeuNewGeneration[i][j] = '■';
             System.out.println("ajout d'une cellule");
             System.out.println("nombre de celle proche = " + nbCelleVivantProche);
         } else if (nbCelleVivantProche >= 4 || nbCelleVivantProche < 2) {
-            tabDeJeu[i][j] = ' ';
+            tabDeJeuNewGeneration[i][j] = ' ';
             System.out.println("mort d'une cellule");
             System.out.println("nombre de celle proche = " + nbCelleVivantProche);
         } else {
